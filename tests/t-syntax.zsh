@@ -43,8 +43,10 @@
 }
 
 @test 'bin/ scripts have executable bit set' {
+    local non_exec=""
     for file in "$pluginDir/bin/"*; do
         [[ -f "$file" ]] || continue
-        [[ -x "$file" ]] || { echo "$file not executable"; exit 1; }
+        [[ -x "$file" ]] || non_exec="$non_exec $file"
     done
+    assert "$non_exec" is_empty
 }
