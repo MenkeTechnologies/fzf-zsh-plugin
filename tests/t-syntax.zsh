@@ -50,3 +50,47 @@
     done
     assert "$non_exec" is_empty
 }
+
+#--------------------------------------------------------------
+# Plugin metadata + dispatch contract pins
+#--------------------------------------------------------------
+
+@test 'completions/ directory contains at least one _file' {
+    # zsh completion files start with `_`; if the dir holds none,
+    # the `fpath` extension at source-time produces no completions.
+    local count=0
+    for file in "$pluginDir/completions/"_*; do
+        [[ -f "$file" ]] && count=$((count + 1))
+    done
+    [[ $count -gt 0 ]]
+    assert $state equals 0
+}
+
+@test 'every completion file starts with #compdef directive' {
+    local missing=""
+    for file in "$pluginDir/completions/"_*; do
+        [[ -f "$file" ]] || continue
+        run head -1 "$file"
+        [[ "$output" =~ ^#compdef ]] || missing="$missing ${file##*/}"
+    done
+    assert "$missing" is_empty
+}
+
+@test 'sourcing plugin twice does not duplicate fpath entries' {
+    run zsh -c '
+        export PATH="/usr/bin:/bin"
+        function fzf { true }
+        source "'"$pluginDir"'/fzf-zsh-plugin.plugin.zsh"
+        before=$#fpath
+        source "'"$pluginDir"'/fzf-zsh-plugin.plugin.zsh"
+        after=$#fpath
+        echo "delta=$((after-before))"
+    '
+    assert $state equals 0
+    assert "$output" contains "delta=0"
+}
+
+@test 'README references the plugin entrypoint filename' {
+    run grep -F 'fzf-zsh-plugin.plugin.zsh' "$pluginDir/README.md"
+    assert $state equals 0
+}
