@@ -52,7 +52,7 @@ function debugOut() {
 #[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 
 # Reasonable defaults. Exclude .git directory and the node_modules cesspit.
-FZF_DEFAULT_COMMAND='find . -type f ( -path .git -o -path node_modules ) -prune'
+FZF_DEFAULT_COMMAND='find . -type f \( -path "*/.git/*" -o -path "*/node_modules/*" \) -prune -o -type f -print'
 
 if has rg; then
   # rg is faster than find, so use it instead.
