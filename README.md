@@ -21,7 +21,7 @@
 
 ZSH plugin to enable using [fzf](https://github.com/junegunn/fzf) to search command history and for files.
 
-This will automagically install `fzf` into your home directory if it isn't already there, and bind `^R` to an `fzf`-powered search of your command history.
+This fork does not install `fzf` and does not source `~/.fzf.zsh` (both are commented out in `fzf-zsh-plugin.plugin.zsh`), so `fzf` must already be on your `$PATH` and the `^R` history binding comes from your own `fzf` key-bindings setup. The plugin adds its `bin` directory to `$PATH`, its `completions` directory to `$fpath`, and sets `$FZF_DEFAULT_COMMAND`, `$FZF_DEFAULT_OPTS` and `$FZF_CTRL_T_COMMAND`.
 
 Used by the [zsh-quickstart-kit](https://github.com/unixorn/zsh-quickstart-kit) to make the default setup have a more 'batteries included' feel.
 
