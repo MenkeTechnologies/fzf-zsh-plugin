@@ -1,0 +1,4 @@
+#compdef fzf-find-edit
+# Source: script source $ZINIT[PLUGINS_DIR]/MenkeTechnologies---fzf-zsh-plugin/bin/fzf-find-edit
+
+_arguments -s -S '1:fzf query (file):_files'

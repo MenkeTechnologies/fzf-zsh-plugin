@@ -1,0 +1,4 @@
+#compdef tmux-kill
+# Source: script source $ZINIT[PLUGINS_DIR]/MenkeTechnologies---fzf-zsh-plugin/bin/tmux-kill
+
+_nothing

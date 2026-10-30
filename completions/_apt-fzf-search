@@ -1,0 +1,4 @@
+#compdef apt-fzf-search
+# Source: script source $ZINIT[PLUGINS_DIR]/MenkeTechnologies---fzf-zsh-plugin/bin/apt-fzf-search
+
+_arguments -s -S '*:apt-cache search regex:'

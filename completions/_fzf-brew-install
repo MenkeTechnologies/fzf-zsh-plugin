@@ -1,0 +1,4 @@
+#compdef fzf-brew-install
+# Source: script source $ZINIT[PLUGINS_DIR]/MenkeTechnologies---fzf-zsh-plugin/bin/fzf-brew-install
+
+_nothing

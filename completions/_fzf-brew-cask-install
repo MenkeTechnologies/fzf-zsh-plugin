@@ -1,0 +1,4 @@
+#compdef fzf-brew-cask-install
+# Source: script source $ZINIT[PLUGINS_DIR]/MenkeTechnologies---fzf-zsh-plugin/bin/fzf-brew-cask-install
+
+_arguments -s -S '1:fzf query (cask):'

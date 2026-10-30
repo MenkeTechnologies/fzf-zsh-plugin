@@ -1,0 +1,4 @@
+#compdef fzf-grep-edit
+# Source: script source $ZINIT[PLUGINS_DIR]/MenkeTechnologies---fzf-zsh-plugin/bin/fzf-grep-edit
+
+_arguments -s -S '1:ripgrep search pattern:'

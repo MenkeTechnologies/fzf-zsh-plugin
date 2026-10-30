@@ -1,0 +1,4 @@
+#compdef fif
+# Source: script source $ZINIT[PLUGINS_DIR]/MenkeTechnologies---fzf-zsh-plugin/bin/fif
+
+_arguments -s -S '1:ripgrep search pattern:'

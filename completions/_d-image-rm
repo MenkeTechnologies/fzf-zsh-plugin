@@ -1,0 +1,4 @@
+#compdef d-image-rm
+# Source: script source $ZINIT[PLUGINS_DIR]/MenkeTechnologies---fzf-zsh-plugin/bin/d-image-rm
+
+_arguments -s -S '1:fzf query (image):{compadd -- ${(f)"$(docker images --format "{{.Repository}}" 2>/dev/null)"}}'

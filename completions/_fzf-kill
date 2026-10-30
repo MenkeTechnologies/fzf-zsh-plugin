@@ -1,0 +1,4 @@
+#compdef fzf-kill
+# Source: script source $ZINIT[PLUGINS_DIR]/MenkeTechnologies---fzf-zsh-plugin/bin/fzf-kill
+
+_arguments -s -S '*:extra argument passed to kill -9:_pids'

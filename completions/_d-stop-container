@@ -1,0 +1,4 @@
+#compdef d-stop-container
+# Source: script source $ZINIT[PLUGINS_DIR]/MenkeTechnologies---fzf-zsh-plugin/bin/d-stop-container
+
+_arguments -s -S '1:fzf query (running container):{compadd -- ${(f)"$(docker ps --format "{{.Names}}" 2>/dev/null)"}}'

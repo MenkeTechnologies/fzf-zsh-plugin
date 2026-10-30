@@ -1,0 +1,4 @@
+#compdef fzf-brew-cask-uninstall
+# Source: script source $ZINIT[PLUGINS_DIR]/MenkeTechnologies---fzf-zsh-plugin/bin/fzf-brew-cask-uninstall
+
+_arguments -s -S '1:fzf query (installed cask):{compadd -- ${(f)"$(brew list --cask 2>/dev/null)"}}'

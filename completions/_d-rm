@@ -1,0 +1,4 @@
+#compdef d-rm
+# Source: script source $ZINIT[PLUGINS_DIR]/MenkeTechnologies---fzf-zsh-plugin/bin/d-rm
+
+_arguments -s -S '1:fzf query (container):{compadd -- ${(f)"$(docker ps -a --format "{{.Names}}" 2>/dev/null)"}}'

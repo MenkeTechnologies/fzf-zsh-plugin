@@ -1,0 +1,4 @@
+#compdef tmux-search
+# Source: script source $ZINIT[PLUGINS_DIR]/MenkeTechnologies---fzf-zsh-plugin/bin/tmux-search
+
+_arguments -s -S '1:fzf query (tmux session):{compadd -- ${(f)"$(tmux list-sessions -F "#{session_name}" 2>/dev/null)"}}'

@@ -1,0 +1,4 @@
+#compdef asdf-fzf-install
+# Source: script source $ZINIT[PLUGINS_DIR]/MenkeTechnologies---fzf-zsh-plugin/bin/asdf-fzf-install
+
+_arguments -s -S '1:asdf plugin:{compadd -- ${(f)"$(asdf plugin-list 2>/dev/null)"}}'

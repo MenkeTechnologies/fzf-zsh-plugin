@@ -1,0 +1,4 @@
+#compdef fzf-brew-uninstall
+# Source: script source $ZINIT[PLUGINS_DIR]/MenkeTechnologies---fzf-zsh-plugin/bin/fzf-brew-uninstall
+
+_nothing

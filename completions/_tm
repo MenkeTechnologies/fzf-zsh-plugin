@@ -1,0 +1,4 @@
+#compdef tm
+# Source: script source $ZINIT[PLUGINS_DIR]/MenkeTechnologies---fzf-zsh-plugin/bin/tm
+
+_arguments -s -S '1:tmux session (created if missing):{compadd -- ${(f)"$(tmux list-sessions -F "#{session_name}" 2>/dev/null)"}}'
